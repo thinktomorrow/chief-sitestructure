@@ -1,0 +1,54 @@
+{
+    "name": "thinktomorrow/chief-sitestructure",
+    "description": "Site structure + breadcrumb assistant for Thinktomorrow/chief cms",
+    "type": "library",
+    "keywords": ["laravel", "chief", "chief-cms"],
+    "require": {
+        "thinktomorrow/chief": "@dev"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*|4.*",
+        "phpunit/phpunit": "~7.5|~8.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Philippe Damen",
+            "email": "philippe@thinktomorrow.be"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Thinktomorrow\\ChiefSitestructure\\": "src/"
+        },
+        "files": [
+            "src/Common/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Thinktomorrow\\ChiefSitestructure\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Thinktomorrow\\ChiefSitestructure\\Providers\\ChiefSitestructureServiceProvider"
+            ]
+        }
+    },
+    "repositories": {
+        "local": {
+            "type": "path",
+            "url": "/Users/philippedamen/projects/chief",
+            "options": {
+                "symlink": true
+            }
+        }
+    }
+}
