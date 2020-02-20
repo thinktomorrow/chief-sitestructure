@@ -69,6 +69,7 @@ class SiteStructureTest extends TestCase
             ->put(route('chief.back.managers.update', ['singles', $this->page->id]), $this->validUpdatePageParams([
                 'parent_page' => $extra_page->flatreference()->get()
             ]));
+        dump($response);
         $response->assertStatus(302);
 
         $structure = app(SiteStructure::class)->get();
