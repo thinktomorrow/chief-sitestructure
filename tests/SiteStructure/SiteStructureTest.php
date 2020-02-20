@@ -4,13 +4,12 @@ namespace Thinktomorrow\ChiefSitestructure\Tests\SiteStructure;
 
 use Vine\NodeCollection;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\DB;
 use Thinktomorrow\Chief\Pages\Single;
 use Thinktomorrow\Chief\Urls\UrlRecord;
 use Thinktomorrow\Chief\Management\Register;
 use Thinktomorrow\ChiefSitestructure\SiteStructure;
 use Thinktomorrow\ChiefSitestructure\Tests\TestCase;
-use Thinktomorrow\ChiefSitestructure\Tests\Fakes\BreadCrumbAssistedManager;
+use Thinktomorrow\ChiefSitestructure\Tests\Fakes\BreadcrumbAssistedManager;
 
 class SiteStructureTest extends TestCase
 {
@@ -20,7 +19,7 @@ class SiteStructureTest extends TestCase
 
         $this->setUpDefaultAuthorization();
         app()->setLocale('nl');
-        app(Register::class)->register(BreadCrumbAssistedManager::class, Single::class);
+        app(Register::class)->register(BreadcrumbAssistedManager::class, Single::class);
 
         // Create a dummy page up front based on the expected validPageParams
         $this->page = Single::create([

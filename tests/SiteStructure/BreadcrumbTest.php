@@ -2,7 +2,6 @@
 
 namespace Thinktomorrow\ChiefSitestructure\Tests\SiteStructure;
 
-use Vine\NodeCollection;
 use Illuminate\Support\Collection;
 use Thinktomorrow\Chief\Pages\Single;
 use Thinktomorrow\ChiefSitestructure\SiteStructure;

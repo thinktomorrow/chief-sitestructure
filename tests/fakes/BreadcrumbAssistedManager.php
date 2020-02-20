@@ -1,12 +1,8 @@
-<?php
-
-declare(strict_types = 1);
+<?php declare(strict_types = 1);
 
 namespace Thinktomorrow\ChiefSitestructure\Tests\Fakes;
 
-use Thinktomorrow\Chief\Fields\Fields;
 use Thinktomorrow\Chief\Pages\PageManager;
-use Thinktomorrow\Chief\Fields\Types\InputField;
 use Thinktomorrow\Chief\Management\Assistants\UrlAssistant;
 use Thinktomorrow\Chief\Management\Assistants\ArchiveAssistant;
 use Thinktomorrow\Chief\Management\Assistants\PublishAssistant;
