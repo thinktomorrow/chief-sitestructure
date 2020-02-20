@@ -9,7 +9,7 @@ use Spatie\Activitylog\ActivitylogServiceProvider;
 use Astrotomic\Translatable\TranslatableServiceProvider;
 use Thinktomorrow\Squanto\SquantoManagerServiceProvider;
 use Thinktomorrow\Chief\App\Providers\ChiefServiceProvider;
-use Thinktomorrow\ChiefSitestructure\Providers\ChiefSitestructureServiceProvider;
+use Thinktomorrow\ChiefSitestructure\ChiefSitestructureServiceProvider;
 
 trait CreatesApplication
 {
