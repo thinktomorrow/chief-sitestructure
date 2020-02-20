@@ -25,9 +25,9 @@ class SiteStructure
         $parent = DB::table('site_structure')->where('reference', $parent_reference)->get();
         $parent_id = null;
 
-        if($parent->isEmpty() && $parent_reference){
+        if ($parent->isEmpty() && $parent_reference) {
             $parent_id = DB::table('site_structure')->insertGetId(['reference' => $parent_reference]);
-        }elseif($parent_reference){
+        } elseif ($parent_reference) {
             $parent_id = $parent->first()->id;
         }
 
@@ -51,7 +51,7 @@ class SiteStructure
 
     private function mapExtraFields(array $source)
     {
-        $source = collect($source)->map(function($entry){
+        $source = collect($source)->map(function ($entry) {
             $model = FlatReferenceFactory::fromString($entry->reference)->instance();
             $entry->url = $model->url();
             $entry->label = $model->title;
@@ -64,7 +64,7 @@ class SiteStructure
 
     public function getForReference(string $reference)
     {
-        return $this->collection->shake(function($node) use($reference){
+        return $this->collection->shake(function ($node) use ($reference) {
             return $node->reference == $reference;
         });
     }
