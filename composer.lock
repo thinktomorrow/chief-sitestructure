@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7fdeb6bbed02241aed8f43b352fa9c83",
+    "content-hash": "81c1fefa0672f640bede472c9bc9bc35",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -4129,16 +4129,16 @@
         },
         {
             "name": "thinktomorrow/chief",
-            "version": "dev-master",
+            "version": "0.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thinktomorrow/chief.git",
-                "reference": "318c261f3d7cbfc84f51b2b8079856bcc3ff719a"
+                "reference": "f4527cb6a58d9b7c5a4b84e165b59f7b0059f47b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thinktomorrow/chief/zipball/318c261f3d7cbfc84f51b2b8079856bcc3ff719a",
-                "reference": "318c261f3d7cbfc84f51b2b8079856bcc3ff719a",
+                "url": "https://api.github.com/repos/thinktomorrow/chief/zipball/f4527cb6a58d9b7c5a4b84e165b59f7b0059f47b",
+                "reference": "f4527cb6a58d9b7c5a4b84e165b59f7b0059f47b",
                 "shasum": ""
             },
             "require": {
@@ -4191,7 +4191,7 @@
                 "site management",
                 "think tomorrow"
             ],
-            "time": "2020-02-19T15:52:35+00:00"
+            "time": "2020-02-20T12:37:32+00:00"
         },
         {
             "name": "thinktomorrow/squanto",
@@ -6247,9 +6247,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "thinktomorrow/chief": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
