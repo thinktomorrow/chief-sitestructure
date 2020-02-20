@@ -1,3 +1,11 @@
+#  Chief admin package
+
+[![Latest Version](https://img.shields.io/github/release/thinktomorrow/chief-sitestructure.svg?style=flat-square)](https://github.com/thinktomorrow/chief-sitestructure/releases)
+[![Build Status](https://img.shields.io/travis/thinktomorrow/chief-sitestructure/master.svg?style=flat-square)](https://travis-ci.org/thinktomorrow/chief)
+[![Quality Score](https://img.shields.io/scrutinizer/g/thinktomorrow/chief-sitestructure.svg?style=flat-square)](https://scrutinizer-ci.com/g/thinktomorrow/chief-sitestructure)
+[![StyleCI](https://styleci.io/repos/33916850/shield)](https://styleci.io/repos/33916850)
+[![Total Downloads](https://img.shields.io/packagist/dt/thinktomorrow/chief-sitestructure.svg?style=flat-square)](https://packagist.org/packages/thinktomorrow/chief-sitestructure)
+
 # Chief sitestructure
 
 This add-on adds sitestructure and breadcrumb features to chief.
