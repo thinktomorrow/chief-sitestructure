@@ -14,7 +14,7 @@ class Breadcrumbs
 
     public static function getForPage(Page $page)
     {
-        return collect(static::getFor($page->flatreference()->get())->flatten()->all())->reject(function($node){
+        return collect(static::getFor($page->flatreference()->get())->flatten()->all())->reject(function ($node) {
             return !$node->online;
         });
     }
@@ -23,7 +23,9 @@ class Breadcrumbs
     {
         $structure = collect(static::getFor($page->flatreference()->get())->flatten()->all())->first();
 
-        if($structure) return $structure->reference;
+        if ($structure) {
+            return $structure->reference;
+        }
 
         return null;
     }
