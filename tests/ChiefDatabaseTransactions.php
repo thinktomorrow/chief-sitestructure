@@ -9,7 +9,7 @@ trait ChiefDatabaseTransactions
     protected $connectionsToTransact = ['testing'];
     protected static $migrationsHaveRun = false;
 
-    protected $testDatabasePath = __DIR__.'/../src/database/testing.sqlite';
+    protected $testDatabasePath = __DIR__.'/../database/testing.sqlite';
 
     protected function setUpDatabase()
     {
@@ -18,7 +18,7 @@ trait ChiefDatabaseTransactions
 
             touch($this->testDatabasePath);
 
-            $sitestructure_migrations = app(Filesystem::class)->allFiles(realpath(__DIR__.'/../src/database/migrations'));
+            $sitestructure_migrations = app(Filesystem::class)->allFiles(realpath(__DIR__.'/../database/migrations'));
             $chief_migrations = app(Filesystem::class)->allFiles(realpath(__DIR__.'/../vendor/thinktomorrow/chief/database/migrations'));
             $assetlibrary_migrations = app(Filesystem::class)->allFiles(realpath(__DIR__.'/../vendor/thinktomorrow/assetlibrary/database/migrations'));
             $squanto_migrations = app(Filesystem::class)->allFiles(realpath(__DIR__.'/../vendor/thinktomorrow/squanto/database/migrations'));

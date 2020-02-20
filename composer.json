@@ -1,8 +1,8 @@
 {
     "name": "thinktomorrow/chief-sitestructure",
-    "description": "Site structure + breadcrumb assistant for Thinktomorrow/chief cms",
+    "description": "Site structure and breadcrumb assistant for Thinktomorrow/chief cms",
     "type": "library",
-    "keywords": ["laravel", "chief", "chief-cms"],
+    "keywords": ["laravel", "chief", "chief-cms", "site structure", "breadcrumbs"],
     "require": {
         "thinktomorrow/chief": "dev-master@dev"
     },

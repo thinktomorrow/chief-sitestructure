@@ -31,7 +31,7 @@ trait CreatesApplication
         // Connection is defined in the phpunit config xml
         $app['config']->set('database.connections.testing', [
             'driver'   => 'sqlite',
-            'database' => env('DB_DATABASE', __DIR__.'/../src/database/testing.sqlite'),
+            'database' => env('DB_DATABASE', __DIR__.'/../database/testing.sqlite'),
             'prefix'   => '',
         ]);
     }
