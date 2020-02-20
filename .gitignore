@@ -4,3 +4,4 @@ vendor/
 /report
 storage/
 bootstrap/
+/src/database/testing.sqlite
