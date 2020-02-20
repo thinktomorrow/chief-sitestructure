@@ -23,7 +23,7 @@
             "Thinktomorrow\\ChiefSitestructure\\": "src/"
         },
         "files": [
-            "src/Common/helpers.php"
+            "src/helpers.php"
         ]
     },
     "autoload-dev": {
