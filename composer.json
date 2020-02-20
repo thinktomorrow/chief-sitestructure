@@ -4,7 +4,7 @@
     "type": "library",
     "keywords": ["laravel", "chief", "chief-cms"],
     "require": {
-        "thinktomorrow/chief": "@dev"
+        "thinktomorrow/chief": "dev-master@dev"
     },
     "require-dev": {
         "orchestra/testbench": "3.8.*|4.*",
@@ -38,17 +38,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Thinktomorrow\\ChiefSitestructure\\Providers\\ChiefSitestructureServiceProvider"
+                "Thinktomorrow\\ChiefSitestructure\\ChiefSitestructureServiceProvider"
             ]
-        }
-    },
-    "repositories": {
-        "local": {
-            "type": "path",
-            "url": "/Users/philippedamen/projects/chief",
-            "options": {
-                "symlink": true
-            }
         }
     }
 }

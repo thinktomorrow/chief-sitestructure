@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "29a1729d5e5ce9524481b912370a901f",
+    "content-hash": "80ada76539d916b09f46d32fb48d3597",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -4129,11 +4129,17 @@
         },
         {
             "name": "thinktomorrow/chief",
-            "version": "dev-ft/breadcrumbs",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thinktomorrow/chief.git",
+                "reference": "318c261f3d7cbfc84f51b2b8079856bcc3ff719a"
+            },
             "dist": {
-                "type": "path",
-                "url": "/Users/philippedamen/projects/chief",
-                "reference": "5fdc84638033b69eda2310e0184299e5bb4f1803"
+                "type": "zip",
+                "url": "https://api.github.com/repos/thinktomorrow/chief/zipball/318c261f3d7cbfc84f51b2b8079856bcc3ff719a",
+                "reference": "318c261f3d7cbfc84f51b2b8079856bcc3ff719a",
+                "shasum": ""
             },
             "require": {
                 "astrotomic/laravel-translatable": "^11.3",
@@ -4175,11 +4181,7 @@
                     "src/Common/helpers.php"
                 ]
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Thinktomorrow\\Chief\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "none"
             ],
@@ -4189,9 +4191,7 @@
                 "site management",
                 "think tomorrow"
             ],
-            "transport-options": {
-                "symlink": true
-            }
+            "time": "2020-02-19T15:52:35+00:00"
         },
         {
             "name": "thinktomorrow/squanto",
