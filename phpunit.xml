@@ -18,6 +18,9 @@
             <directory suffix=".php">./src</directory>
         </whitelist>
     </filter>
+    <logging>
+        <log type="coverage-html" target="./report" lowUpperBound="50" highLowerBound="80" />
+    </logging>
     <php>
         <env name="APP_KEY" value="base64:qS0gL9WK3DppyaiXy79dURhU+ecb6k9aryqyOmpHjF8="/>
         <env name="APP_ENV" value="testing"/>

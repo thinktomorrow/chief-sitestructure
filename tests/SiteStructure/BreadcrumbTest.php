@@ -2,6 +2,8 @@
 
 namespace Thinktomorrow\ChiefSitestructure\Tests\SiteStructure;
 
+use Vine\NodeCollection;
+use Illuminate\Support\Collection;
 use Thinktomorrow\Chief\Pages\Single;
 use Thinktomorrow\ChiefSitestructure\SiteStructure;
 use Thinktomorrow\ChiefSitestructure\Tests\TestCase;
@@ -42,4 +44,19 @@ class BreadcrumbTest extends TestCase
         $this->assertCount(1, $breadcrumb);
     }
 
+    /** @test */
+    public function helper_returns_structure_by_page()
+    {
+        $top    = Single::create(['title' => 'top', 'published' => true]);
+        $single = Single::create(['title' => 'top2', 'published' => true]);
+        $page   = Single::create(['title' => 'sub', 'published' => true]);
+
+        app(SiteStructure::class)->save($single->flatreference());
+        app(SiteStructure::class)->save($page->flatreference(), $top->flatreference());
+
+        $breadcrumbs = breadcrumbs($page);
+
+        $this->assertInstanceOf(Collection::class, $breadcrumbs);
+        $this->assertCount(2, $breadcrumbs);
+    }
 }

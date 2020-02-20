@@ -14,8 +14,4 @@ class AddSiteStructureTable extends Migration
             $table->string('reference')->unique();
         });
     }
-
-    public function down()
-    {
-    }
 }

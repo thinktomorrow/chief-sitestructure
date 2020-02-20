@@ -1,7 +1,7 @@
 <?php
 
 use Thinktomorrow\Chief\Pages\Page;
-use Thinktomorrow\Chief\SiteStructure\Breadcrumbs;
+use Thinktomorrow\ChiefSitestructure\Breadcrumbs\Breadcrumbs;
 
 if (!function_exists('breadcrumbs')) {
     function breadcrumbs(Page $page)

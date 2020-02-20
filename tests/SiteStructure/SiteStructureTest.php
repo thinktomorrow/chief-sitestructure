@@ -4,10 +4,13 @@ namespace Thinktomorrow\ChiefSitestructure\Tests\SiteStructure;
 
 use Vine\NodeCollection;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\DB;
 use Thinktomorrow\Chief\Pages\Single;
 use Thinktomorrow\Chief\Urls\UrlRecord;
+use Thinktomorrow\Chief\Management\Register;
 use Thinktomorrow\ChiefSitestructure\SiteStructure;
 use Thinktomorrow\ChiefSitestructure\Tests\TestCase;
+use Thinktomorrow\ChiefSitestructure\Tests\Fakes\BreadCrumbAssistedManager;
 
 class SiteStructureTest extends TestCase
 {
@@ -17,6 +20,7 @@ class SiteStructureTest extends TestCase
 
         $this->setUpDefaultAuthorization();
         app()->setLocale('nl');
+        app(Register::class)->register(BreadCrumbAssistedManager::class, Single::class);
 
         // Create a dummy page up front based on the expected validPageParams
         $this->page = Single::create([
@@ -45,14 +49,27 @@ class SiteStructureTest extends TestCase
     }
 
     /** @test */
+    public function it_can_use_an_existing_page_in_the_site_structure()
+    {
+        app(SiteStructure::class)->save($this->page->flatreference()->get());
+        $extra_page = Single::create(['title' => 'top page', 'published' => true]);
+
+        app(SiteStructure::class)->save($extra_page->flatreference()->get(), $this->page->flatreference()->get());
+
+        $structure = app(SiteStructure::class)->get();
+
+        $this->assertInstanceOf(NodeCollection::class, $structure);
+        $this->assertCount(1, $structure);
+    }
+
+    /** @test */
     public function saving_a_page_triggers_site_structure_save()
     {
-        $extra_page = Single::create(['title' => 'top page']);
+        $extra_page = Single::create(['title' => 'top page', 'published' => true]);
         $response = $this->asAdmin()
             ->put(route('chief.back.managers.update', ['singles', $this->page->id]), $this->validUpdatePageParams([
                 'parent_page' => $extra_page->flatreference()->get()
             ]));
-
         $response->assertStatus(302);
 
         $structure = app(SiteStructure::class)->get();
