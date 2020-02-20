@@ -1,10 +1,11 @@
 {
     "name": "thinktomorrow/chief-sitestructure",
-    "description": "Site structure + breadcrumb assistant for Thinktomorrow/chief cms",
+    "description": "Site structure and breadcrumb assistant for Thinktomorrow/chief cms",
     "type": "library",
-    "keywords": ["laravel", "chief", "chief-cms"],
+    "keywords": ["laravel", "chief", "chief-cms", "site structure", "breadcrumbs"],
     "require": {
-        "thinktomorrow/chief": "@dev"
+        "thinktomorrow/chief": "dev-master@dev",
+        "thinktomorrow/vine": "^0.2.6"
     },
     "require-dev": {
         "orchestra/testbench": "3.8.*|4.*",
@@ -22,7 +23,7 @@
             "Thinktomorrow\\ChiefSitestructure\\": "src/"
         },
         "files": [
-            "src/Common/helpers.php"
+            "src/helpers.php"
         ]
     },
     "autoload-dev": {
@@ -38,17 +39,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Thinktomorrow\\ChiefSitestructure\\Providers\\ChiefSitestructureServiceProvider"
+                "Thinktomorrow\\ChiefSitestructure\\ChiefSitestructureServiceProvider"
             ]
-        }
-    },
-    "repositories": {
-        "local": {
-            "type": "path",
-            "url": "/Users/philippedamen/projects/chief",
-            "options": {
-                "symlink": true
-            }
         }
     }
 }
