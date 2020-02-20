@@ -1,6 +1,6 @@
 # Chief sitestructure
 
-This add-on add sitestructure and breadcrumb features to chief.
+This add-on adds sitestructure and breadcrumb features to chief.
 
 # Versions
 
