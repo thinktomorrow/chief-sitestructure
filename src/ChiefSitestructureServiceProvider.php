@@ -1,6 +1,6 @@
 <?php
 
-namespace Thinktomorrow\ChiefSitestructure\Providers;
+namespace Thinktomorrow\ChiefSitestructure;
 
 use Illuminate\Support\ServiceProvider;
 
