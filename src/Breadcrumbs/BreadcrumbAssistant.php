@@ -47,9 +47,7 @@ class BreadcrumbAssistant implements Assistant
 
     public function saveParentPageField($field, Request $request)
     {
-        if ($request->has('parent_page')) {
-            app(SiteStructure::class)->save($this->model->flatreference()->get(), $request->input('parent_page'));
-        }
+        app(SiteStructure::class)->save($this->model->flatreference()->get(), $request->input('parent_page') ?? null);
     }
 
     public function can($verb): bool

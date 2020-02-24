@@ -58,4 +58,19 @@ class BreadcrumbTest extends TestCase
         $this->assertInstanceOf(Collection::class, $breadcrumbs);
         $this->assertCount(2, $breadcrumbs);
     }
+
+    /** @test */
+    public function it_can_remove_existingbreadcrumb_link()
+    {
+        $top    = Single::create(['title' => 'top', 'published' => true]);
+        $page   = Single::create(['title' => 'sub', 'published' => true]);
+
+        app(SiteStructure::class)->save($page->flatreference(), $top->flatreference());
+        app(SiteStructure::class)->save($page->flatreference(), null);
+
+        $breadcrumb = Breadcrumbs::getForPage($page);
+
+        $this->assertCount(1, $breadcrumb);
+        $this->assertEquals('sub', $breadcrumb->first()->label);
+    }
 }
