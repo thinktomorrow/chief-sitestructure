@@ -20,8 +20,6 @@ class BreadcrumbAssistant implements Assistant
     public function manager(Manager $manager)
     {
         $this->manager  = $manager;
-
-        $this->model = $manager->model();
     }
 
     public static function key(): string
@@ -38,8 +36,8 @@ class BreadcrumbAssistant implements Assistant
     {
         return new Fields([
             SelectField::make('parent_page')
-                ->options(UrlHelper::allModelsWithoutSelf($this->model))
-                ->selected(app(Breadcrumbs::class)->getParentForPage($this->model))
+                ->options(UrlHelper::allModelsWithoutSelf($this->manager->modelInstance()))
+                ->selected(app(Breadcrumbs::class)->getParentForPage($this->manager->modelInstance()))
                 ->grouped()
                 ->label('De pagina waar deze pagina onder hoort.'),
         ]);
@@ -47,7 +45,7 @@ class BreadcrumbAssistant implements Assistant
 
     public function saveParentPageField($field, Request $request)
     {
-        app(SiteStructure::class)->save($this->model->flatreference()->get(), $request->input('parent_page') ?? null);
+        app(SiteStructure::class)->save($this->manager->existingModel()->flatreference()->get(), $request->input('parent_page') ?? null);
     }
 
     public function can($verb): bool

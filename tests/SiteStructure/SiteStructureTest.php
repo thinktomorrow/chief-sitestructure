@@ -7,6 +7,7 @@ use Illuminate\Support\Arr;
 use Thinktomorrow\Chief\Pages\Single;
 use Thinktomorrow\Chief\Urls\UrlRecord;
 use Thinktomorrow\Chief\Management\Register;
+use Thinktomorrow\Chief\States\PageState;
 use Thinktomorrow\ChiefSitestructure\SiteStructure;
 use Thinktomorrow\ChiefSitestructure\Tests\TestCase;
 use Thinktomorrow\ChiefSitestructure\Tests\Fakes\BreadcrumbAssistedManager;
@@ -51,7 +52,7 @@ class SiteStructureTest extends TestCase
     public function it_can_use_an_existing_page_in_the_site_structure()
     {
         app(SiteStructure::class)->save($this->page->flatreference()->get());
-        $extra_page = Single::create(['title' => 'top page', 'published' => true]);
+        $extra_page = Single::create(['title' => 'top page', 'current_state' => PageState::PUBLISHED]);
 
         app(SiteStructure::class)->save($extra_page->flatreference()->get(), $this->page->flatreference()->get());
 
@@ -64,7 +65,7 @@ class SiteStructureTest extends TestCase
     /** @test */
     public function saving_a_page_triggers_site_structure_save()
     {
-        $extra_page = Single::create(['title' => 'top page', 'published' => true]);
+        $extra_page = Single::create(['title' => 'top page', 'current_state' => PageState::PUBLISHED]);
         $response = $this->asAdmin()
             ->put(route('chief.back.managers.update', ['singles', $this->page->id]), $this->validUpdatePageParams([
                 'parent_page' => $extra_page->flatreference()->get()
