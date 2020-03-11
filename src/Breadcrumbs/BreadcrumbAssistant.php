@@ -15,8 +15,6 @@ class BreadcrumbAssistant implements Assistant
 {
     private $manager;
 
-    private $model;
-
     public function manager(Manager $manager)
     {
         $this->manager  = $manager;
