@@ -4,18 +4,22 @@
     "type": "library",
     "keywords": ["laravel", "chief", "chief-cms", "site structure", "breadcrumbs"],
     "require": {
-        "thinktomorrow/chief": "^0.4.8",
+        "thinktomorrow/chief": "^0.5.1",
         "thinktomorrow/vine": "^0.2.6"
     },
     "require-dev": {
-        "orchestra/testbench": "3.8.*|4.*",
-        "phpunit/phpunit": "~7.5|~8.0"
+        "orchestra/testbench": "4.*",
+        "phpunit/phpunit": "~8.0"
     },
     "license": "MIT",
     "authors": [
         {
             "name": "Philippe Damen",
             "email": "philippe@thinktomorrow.be"
+        },
+        {
+            "name": "Ben Cavens",
+            "email": "ben@thinktomorrow.be"
         }
     ],
     "autoload": {

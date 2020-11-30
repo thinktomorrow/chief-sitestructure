@@ -9,7 +9,6 @@ use Thinktomorrow\Chief\Management\Manager;
 use Thinktomorrow\Chief\Fields\Types\SelectField;
 use Thinktomorrow\ChiefSitestructure\SiteStructure;
 use Thinktomorrow\Chief\Management\Assistants\Assistant;
-use Thinktomorrow\ChiefSitestructure\Breadcrumbs\Breadcrumbs;
 
 class BreadcrumbAssistant implements Assistant
 {
@@ -34,7 +33,7 @@ class BreadcrumbAssistant implements Assistant
     {
         return new Fields([
             SelectField::make('parent_page')
-                ->options(UrlHelper::allModelsWithoutSelf($this->manager->modelInstance()))
+                ->options(UrlHelper::allModelsExcept($this->manager->modelInstance()))
                 ->selected(app(Breadcrumbs::class)->getParentForPage($this->manager->modelInstance()))
                 ->grouped()
                 ->label('De pagina waar deze pagina onder hoort.'),

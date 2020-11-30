@@ -6,7 +6,9 @@ use Thinktomorrow\Chief\Users\User;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Database\Eloquent\Factory;
 use Thinktomorrow\Chief\Authorization\Role;
+use Illuminate\Foundation\Exceptions\Handler;
 use Orchestra\Testbench\TestCase as BaseTestCase;
+use Illuminate\Contracts\Debug\ExceptionHandler;
 use Thinktomorrow\Chief\Authorization\AuthorizationDefaults;
 use Thinktomorrow\ChiefSitestructure\Tests\CreatesApplication;
 use Thinktomorrow\ChiefSitestructure\Tests\ChiefDatabaseTransactions;
@@ -46,6 +48,22 @@ abstract class TestCase extends BaseTestCase
 
         AuthorizationDefaults::roles()->each(function ($defaultPermissions, $roleName) {
             Artisan::call('chief:role', ['name' => $roleName, '--permissions' => implode(',', $defaultPermissions)]);
+        });
+    }
+
+    protected function disableExceptionHandling()
+    {
+        $this->app->instance(ExceptionHandler::class, new class extends Handler {
+            public function __construct()
+            {
+            }
+            public function report(\Exception $e)
+            {
+            }
+            public function render($request, \Exception $e)
+            {
+                throw $e;
+            }
         });
     }
 }

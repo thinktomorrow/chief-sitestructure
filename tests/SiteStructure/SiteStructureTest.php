@@ -8,6 +8,7 @@ use Thinktomorrow\Chief\Pages\Single;
 use Thinktomorrow\Chief\Urls\UrlRecord;
 use Thinktomorrow\Chief\Management\Register;
 use Thinktomorrow\Chief\States\PageState;
+use Illuminate\Foundation\Exceptions\Handler;
 use Thinktomorrow\ChiefSitestructure\SiteStructure;
 use Thinktomorrow\ChiefSitestructure\Tests\TestCase;
 use Thinktomorrow\ChiefSitestructure\Tests\Fakes\BreadcrumbAssistedManager;
