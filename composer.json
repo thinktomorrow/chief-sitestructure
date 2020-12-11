@@ -4,7 +4,7 @@
     "type": "library",
     "keywords": ["laravel", "chief", "chief-cms", "site structure", "breadcrumbs"],
     "require": {
-        "thinktomorrow/chief": "^0.5.1|dev-master@dev",
+        "thinktomorrow/chief": "^0.5.1|dev-master@dev|dev-ft/pagebuilder-online-toggle@dev",
         "thinktomorrow/vine": "^0.2.6"
     },
     "require-dev": {
