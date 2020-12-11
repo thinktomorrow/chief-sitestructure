@@ -15,6 +15,7 @@ class BreadcrumbTest extends TestCase
     /** @test */
     public function it_can_get_the_breadcrumb_for_current_page()
     {
+        $this->disableExceptionHandling();
         $top    = Single::create(['title' => 'top', 'current_state' => PageState::PUBLISHED]);
         $single = Single::create(['title' => 'top2', 'current_state' => PageState::PUBLISHED]);
         $page   = Single::create(['title' => 'sub', 'current_state' => PageState::PUBLISHED]);

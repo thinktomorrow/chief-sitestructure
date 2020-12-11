@@ -10,6 +10,7 @@ use Thinktomorrow\Chief\FlatReferences\FlatReferenceFactory;
 class SiteStructure
 {
     private $collection;
+    private static $cachekey = 'chief-sitestructure-collection';
 
     public function __construct()
     {
@@ -31,8 +32,9 @@ class SiteStructure
             $parent_id = $parent->first()->id;
         }
 
-
         DB::table('site_structure')->updateOrInsert(['reference' => $child_reference], ['parent_id' => $parent_id]);
+
+        cache()->forget(self::$cachekey);
     }
 
     public function get()
@@ -42,9 +44,10 @@ class SiteStructure
 
     private function buildCollection()
     {
-        $source = DB::table('site_structure')->get()->toArray();
-
-        $source = $this->mapExtraFields($source);
+        $source = cache()->remember(self::$cachekey, $seconds = 60 * 60, function(){
+            $source = DB::table('site_structure')->get()->toArray();
+            return $this->mapExtraFields($source);
+        });
 
         return NodeCollection::fromSource(new ArraySource($source));
     }
