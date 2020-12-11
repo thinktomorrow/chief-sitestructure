@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "538c1c403d85a849fd6fd500f3131b3f",
+    "content-hash": "3179cc53f66817d090f6581f090746df",
     "packages": [
         {
             "name": "astrotomic/laravel-translatable",
@@ -5327,16 +5327,16 @@
         },
         {
             "name": "thinktomorrow/chief",
-            "version": "0.5.9",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thinktomorrow/chief.git",
-                "reference": "db0bc8c8c1dc6e6fd8d7d66fb4442c643d9865f0"
+                "reference": "cd1ec9b8f04056b3505ec9f17fc6236ce1b5965a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thinktomorrow/chief/zipball/db0bc8c8c1dc6e6fd8d7d66fb4442c643d9865f0",
-                "reference": "db0bc8c8c1dc6e6fd8d7d66fb4442c643d9865f0",
+                "url": "https://api.github.com/repos/thinktomorrow/chief/zipball/cd1ec9b8f04056b3505ec9f17fc6236ce1b5965a",
+                "reference": "cd1ec9b8f04056b3505ec9f17fc6236ce1b5965a",
                 "shasum": ""
             },
             "require": {
@@ -5395,7 +5395,7 @@
                 "site management",
                 "think tomorrow"
             ],
-            "time": "2020-10-26T11:21:23+00:00"
+            "time": "2020-11-16T08:26:42+00:00"
         },
         {
             "name": "thinktomorrow/squanto",
@@ -5893,16 +5893,16 @@
         },
         {
             "name": "fakerphp/faker",
-            "version": "v1.12.0",
+            "version": "v1.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FakerPHP/Faker.git",
-                "reference": "9aa6c9e289860951e6b4d010c7a841802d015cd8"
+                "reference": "841e8bdde345cc1ea9f98e776959e7531cadea0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/9aa6c9e289860951e6b4d010c7a841802d015cd8",
-                "reference": "9aa6c9e289860951e6b4d010c7a841802d015cd8",
+                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/841e8bdde345cc1ea9f98e776959e7531cadea0e",
+                "reference": "841e8bdde345cc1ea9f98e776959e7531cadea0e",
                 "shasum": ""
             },
             "require": {
@@ -5937,7 +5937,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2020-11-23T09:33:08+00:00"
+            "time": "2020-12-11T10:39:41+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -7655,7 +7655,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "thinktomorrow/chief": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
