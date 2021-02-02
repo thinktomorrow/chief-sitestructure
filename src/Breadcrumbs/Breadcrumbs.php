@@ -2,6 +2,7 @@
 
 namespace Thinktomorrow\ChiefSitestructure\Breadcrumbs;
 
+use Vine\NodeCollection;
 use Thinktomorrow\Chief\Pages\Page;
 use Thinktomorrow\ChiefSitestructure\SiteStructure;
 
@@ -19,12 +20,27 @@ class Breadcrumbs
         });
     }
 
+    public static function getGrandParentForPage(Page $page)
+    {
+        /** @var NodeCollection $tree */
+        $tree = static::getFor($page->flatreference()->get());
+
+        if ($tree->first()) {
+            return $tree->first()->reference;
+        }
+
+        return null;
+    }
+
     public static function getParentForPage(Page $page)
     {
-        $structure = collect(static::getFor($page->flatreference()->get())->flatten()->all())->first();
+        /** @var NodeCollection $tree */
+        $tree = static::getFor($page->flatreference()->get());
 
-        if ($structure) {
-            return $structure->reference;
+        $page = $tree->find('reference', $page->flatreference()->get());
+
+        if(($page) && $parent = $page->parent()) {
+            return $parent->reference;
         }
 
         return null;

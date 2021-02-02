@@ -66,6 +66,7 @@ class SiteStructureTest extends TestCase
     /** @test */
     public function saving_a_page_triggers_site_structure_save()
     {
+        $this->disableExceptionHandling();
         $extra_page = Single::create(['title' => 'top page', 'current_state' => PageState::PUBLISHED]);
         $response = $this->asAdmin()
             ->put(route('chief.back.managers.update', ['singles', $this->page->id]), $this->validUpdatePageParams([

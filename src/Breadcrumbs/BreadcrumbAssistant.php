@@ -33,8 +33,8 @@ class BreadcrumbAssistant implements Assistant
     {
         return new Fields([
             SelectField::make('parent_page')
-                ->options(UrlHelper::allModelsExcept($this->manager->modelInstance()))
-                ->selected(app(Breadcrumbs::class)->getParentForPage($this->manager->modelInstance()))
+                ->options(UrlHelper::allModelsExcept($this->manager->hasExistingModel() ? $this->manager->existingModel() : null))
+                ->selected($this->manager->hasExistingModel() ? app(Breadcrumbs::class)->getParentForPage($this->manager->existingModel()) : null)
                 ->grouped()
                 ->label('De pagina waar deze pagina onder hoort.'),
         ]);
